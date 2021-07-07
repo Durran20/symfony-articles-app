@@ -10,6 +10,6 @@
 
 5. copy .env.example .env
 
-6. php bin/console doctrine:fixtures:load
+6. symfony console doctrine:migrations:migrate
 
 7. symfony server:start
