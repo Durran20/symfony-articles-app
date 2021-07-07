@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# EXAMPLE
+# index:
+#    path: /
+#    controller: App\Controller\ArticleController::index

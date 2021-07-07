@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{# Now if we want a title #}
+{% block title %}SymphArt Articles{% endblock %}
+
+
+{# Now if we want the body #}
+{% block body %}
+    <div class="bg-white m-10">
+        <h1 class="text-gray-900 text-2xl">Articles</h1>
+        {# <p>My name is {{ name }}</p> #}
+        {% if articles %}
+            <table id="articles" class="border-separate border border-green-800 mx-auto w-3/5">
+                <thead>
+                    <tr>
+                    <th class="border border-green-600 ...">Article Title</th>
+                    <th class="border border-green-600 ...">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="mx-auto">
+                    {% for article in articles %}
+                        <tr>
+                            <td class="border border-green-600 ...">{{ article.title }}</td>
+                            <td class="border border-green-600 mx-auto">
+                                <a href="/article/{{ article.id }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Book/Show</button></a>
+                                <a href="#"><button data-id="{{ article.id }}" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-full">Delete</button></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No Articles to display</p>
+        {% endif %}
+    </div>
+    
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main.js"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{# Now if we want a title #}
+{% block title %}{{ article.title }}{% endblock %}
+
+
+{# Now if we want the body #}
+{% block body %}
+    <div>
+        <h1 class="text-gray-900 text-2xl">{{ article.title }}</h1>
+        <p>{{ article.body }}</p>
+    </div>
+{% endblock %}
